@@ -160,7 +160,6 @@ class BackAndForthEnvClass(EvoGymBase):
                 keep_index = check
 
         if (0 < self.robot_body * (mask[0] == keep_index)).sum() >= 3:
-            print( (0 < self.robot_body * (mask[0] == keep_index)).sum())
 
             self.robot_body *= (mask[0] == keep_index) 
 
