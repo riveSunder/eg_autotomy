@@ -10,13 +10,13 @@ def exp_0x000(num_workers):
     algo = "GeneticPopulation"
     policy = "MLPBodyPolicy"
     seeds = [1,2,3,4,5]
+    body_dim = 16
 
 
     for seed in seeds:
         for use_autotomy in [0,1]:
 
-            exp_tag = f"{algo}_{policy}_p{population_size}_g{generations}_s{seed}_w{num_workers}_u{use_autotomy}"
-
+            exp_tag = f"{algo}_{policy}_p{population_size}_g{generations}_s{seed}_w{num_workers}_u{use_autotomy}_b{body_dim}"
             exp_cmd = f"python -m bevodevo.train -n BackAndForthEnv-v0 "\
                     f" -p {population_size} -a {algo} -pi {policy} "\
                     f" -g {generations} -x {exp_tag} -s {seed} -u {use_autotomy}"\
