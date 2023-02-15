@@ -26,6 +26,9 @@ class TestEnjoy(unittest.TestCase):
         parser.add_argument("-a", "--num_agents", type=int,\
                 help="how many agents to evaluate", \
                 default=1)
+        parser.add_argument("-b", "--body_dim", type=int,\
+                help="body dim", \
+                default=8)
         parser.add_argument("-e", "--episodes", type=int,\
                 help="number of episodes", default=1)
         parser.add_argument("-f", "--file_path", type=str,\
@@ -47,6 +50,8 @@ class TestEnjoy(unittest.TestCase):
                 help="save frames or not", default=False)
         parser.add_argument("-u", "--use_autotomy", type=int, default=1,\
                 help="allow autotomy in training (for envs that support it)")
+        parser.add_argument("-v", "--save_video", type=float, default=0,\
+                help="1 - save mp4 video to ./assets, 0 - do not.") 
 
         args = parser.parse_args()
 
@@ -60,6 +65,9 @@ class TestEnjoy(unittest.TestCase):
         parser.add_argument("-a", "--num_agents", type=int,\
                 help="how many agents to evaluate", \
                 default=1)
+        parser.add_argument("-b", "--body_dim", type=int,\
+                help="body dim", \
+                default=8)
         parser.add_argument("-e", "--episodes", type=int,\
                 help="number of episodes", default=1)
         parser.add_argument("-f", "--file_path", type=str,\
@@ -81,6 +89,8 @@ class TestEnjoy(unittest.TestCase):
                 help="save frames or not", default=False)
         parser.add_argument("-u", "--use_autotomy", type=int, default=1,\
                 help="allow autotomy in training (for envs that support it)")
+        parser.add_argument("-v", "--save_video", type=float, default=0,\
+                help="1 - save mp4 video to ./assets, 0 - do not.") 
 
         args = parser.parse_args()
 

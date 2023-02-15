@@ -22,6 +22,6 @@ for filename in list_dir:
                             f" -e 1 -a 1 -f {my_filepath} -u {use_auto} -m {my_mode} -g .3 -nr 1"\
                             " -s 1 -d 1"
 
-        print("enjoy command")
-        print(f"     {my_cmd}")
-        #os.system(my_cmd)
+                    print("enjoy command")
+                    print(f"     {my_cmd}")
+                    os.system(my_cmd)
