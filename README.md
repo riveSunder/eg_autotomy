@@ -12,7 +12,9 @@ source my_env/bin/activate
 You'll need some developer tools if they're not already installed on your system.
 
 ```
-sudo apt-get install xorg-dev libglu1-mesa-dev
+sudo apt-get install -y xorg-dev libglu1-mesa-dev cmake libglew-dev libopenmpi-dev build-essential swig 
+# to save mp4s
+sudo apt-get install -y ffmpeg
 ```
 
 ```
