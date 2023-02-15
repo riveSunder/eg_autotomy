@@ -79,7 +79,7 @@ def update_fig(ii):
     global ax
     global frames
 
-    ax.imshow(frames[ii+1])
+    plot_0.set_array(frames[ii+1])
 
 
 def make_mp4(frames_path="./frames/", mp4_path="./assets", \
@@ -111,7 +111,14 @@ def make_mp4(frames_path="./frames/", mp4_path="./assets", \
     fig, ax = make_fig(first_frame)
     num_frames = len(frames) - 1
 
+    msg = f"saving to {mp4_path}"
+    print(msg)
+
+    t0 = time.time()
     matplotlib.animation.FuncAnimation(fig, update_fig, frames=num_frames, interval=10).save(mp4_path)
+    t1 = time.time()
+    msg = f"it took {t1-t0:.3f} seconds to save the animation"
+    print(msg)
 
     rm_path = os.path.join(frames_path, "*png")
 

@@ -20,7 +20,7 @@ for filename in list_dir:
 
                     my_cmd = "python -m bevodevo.enjoy -n BackAndForthEnv-v0 -pi MLPBodyPolicy"\
                             f" -e 1 -a 1 -f {my_filepath} -u {use_auto} -m {my_mode} -g .3 -nr 1"\
-                            " -s 1 -d 1"
+                            " -s 1 -d 0"
 
                     print("enjoy command")
                     print(f"     {my_cmd}")
