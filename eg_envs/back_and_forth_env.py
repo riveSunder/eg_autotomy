@@ -203,6 +203,7 @@ class BackAndForthEnvClass(EvoGymBase):
             self.autotomy_used = False
 
 
+
         self.robot_body = 1.0 * np.clip(self.robot_body, 0, 4)
         
         if False in (np.array(self.robot_body) == np.array(old_body)):
@@ -215,6 +216,7 @@ class BackAndForthEnvClass(EvoGymBase):
     def reverse_direction(self, action):
 
         self.close()
+        old_body = self.robot_body * 1.0
 
         body_action = action[-self.robot_body_elements:]
         autotomy = 1.0 * (body_action > 0.5).reshape(self.robot_body.shape)
