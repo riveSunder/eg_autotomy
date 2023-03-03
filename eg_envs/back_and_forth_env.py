@@ -249,8 +249,6 @@ class BackAndForthEnvClass(EvoGymBase):
         autotomy_temp = self.autotomy_used
         self.reset()
 
-        self.autotomy_used = autotomy_used
-
         self.mode = np.array([1])
         self.goal_counter = np.array([0])
         self.autotomy_used = autotomy_temp

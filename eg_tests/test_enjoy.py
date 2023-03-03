@@ -36,6 +36,8 @@ class TestEnjoy(unittest.TestCase):
                 default="./results/test_exp/")
         parser.add_argument("-g", "--save_gif", type=float, default=0,\
                 help="1 - save gif to ./assets, 0 - do not.") 
+        parser.add_argument("-i", "--agent_idx", type=int,\
+                help="agent index to start with", default=0)
         parser.add_argument("-m", "--mode", default=0,\
                 help="mode (0,1,2, or 3) for body co-evolution")
         parser.add_argument("-ms", "--max_steps", type=int,\
@@ -75,6 +77,8 @@ class TestEnjoy(unittest.TestCase):
                 default="./results/test_exp/")
         parser.add_argument("-g", "--save_gif", type=float, default=0,\
                 help="1 - save gif to ./assets, 0 - do not.") 
+        parser.add_argument("-i", "--agent_idx", type=int,\
+                help="agent index to start with", default=0)
         parser.add_argument("-m", "--mode", default=0,\
                 help="mode (0,1,2, or 3) for body co-evolution")
         parser.add_argument("-ms", "--max_steps", type=int,\

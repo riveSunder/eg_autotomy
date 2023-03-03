@@ -254,7 +254,6 @@ def enjoy(argv):
             print(f"autotomy used in env? {env.unwrapped.autotomy_used}")
             print(f"autotomy allowed in env? {env.unwrapped.allow_autotomy}")
             print(f"episode solved? {np.mean(sum_reward) > 32}")
-            print(agent.body_dim, agent.__class__)
 
 
             epd_rewards.append(sum_reward)
