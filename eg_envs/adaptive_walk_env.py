@@ -44,8 +44,8 @@ class AdaptiveWalkEnvClass(EvoGymBase):
         num_actuators = self.get_actuator_indices("robot").size 
         obs_size = self.get_obs().size
 
-        self.action_space = spaces.Box(low=0.6, high=1.6, shape=(num_actuators, ), dtype=np.float)
-        self.observation_space = spaces.Box(low=-100.0, high=100.0, shape = (obs_size,), dtype=np.float)
+        self.action_space = spaces.Box(low=0.6, high=1.6, shape=(num_actuators, ), dtype=float)
+        self.observation_space = spaces.Box(low=-100.0, high=100.0, shape = (obs_size,), dtype=float)
 
     def remove_robot(self, name="robot"):
         

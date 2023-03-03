@@ -12,6 +12,7 @@ import pybullet
 import pybullet_envs
 
 import matplotlib.pyplot as plt
+import matplotlib.animation
 import skimage
 
 
@@ -33,7 +34,7 @@ from bevodevo.algos.ga import GeneticPopulation
 from bevodevo.algos.random_search import RandomSearch
 
 import eg_envs
-from eg_auto.helpers import make_gif
+from eg_auto.helpers import make_gif, make_mp4
 
 def enjoy(argv):
 
@@ -190,10 +191,6 @@ def enjoy(argv):
 
                 env = gym.make(id=env_name, body=body, \
                         allow_autotomy=argv.use_autotomy, **kwargs) 
-
-                env.seed(13)
-                env.unwrapped.seed(13)
-
             else:
                 env = gym.make(id=env_name)
             obs = env.reset()
@@ -271,7 +268,12 @@ def enjoy(argv):
             speedup = [speedup, argv.save_frames]
             gif_tag = f"u{env.allow_autotomy}_m{agent.mode}_{os.path.split(argv.file_path)[-1]}"
 
-            make_gif(tag=gif_tag, speedup=speedup)
+            make_gif(tag=gif_tag)
+        elif argv.save_video:
+            gif_tag = os.path.split(argv.file_path)[-1]
+            gif_tag =  os.path.split(os.path.split(argv.file_path)[0])[-1] +  gif_tag
+
+            make_mp4(tag=gif_tag)
 
             
 
@@ -313,6 +315,8 @@ if __name__ == "__main__":
             help="save frames or not", default=0)
     parser.add_argument("-u", "--use_autotomy", type=int, default=1,\
             help="allow autotomy in training (for envs that support it)")
+    parser.add_argument("-v", "--save_video", type=float, default=0,\
+            help="1 - save mp4 video to ./assets, 0 - do not.") 
 
 
 

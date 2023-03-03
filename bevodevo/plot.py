@@ -34,7 +34,7 @@ if __name__ == "__main__":
         my_fig, my_ax = plt.subplots(1,1,figsize=(12,8))
         my_ax2 = my_ax.twinx()
         run = 0
-        my_cmap = plt.get_cmap("viridis")
+        my_cmap = plt.get_cmap("magma")
         color_index = 0
 
     for filename in my_dir:
